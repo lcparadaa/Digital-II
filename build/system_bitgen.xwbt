@@ -1,0 +1,7 @@
+INFILE=/home/onarkb/Documents/lm32_soc_HDL-master-Miguel/build/system-routed.ncd
+OUTFILE=/home/onarkb/Documents/lm32_soc_HDL-master-Miguel/build/system.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=/home/onarkb/Documents/lm32_soc_HDL-master-Miguel/build
+LICENSE=WebPack
+USER_INFO=211314695_0_0_476
