@@ -31,9 +31,42 @@ int main()
 {
 	uint32_t aa,bb; 
 for(;;){
-spi_putchar(0xaa);
-uart_putchar(spi_getchar());
+	spi_putchar(0xaa);
+	uart_putchar(spi_getchar());
+// sck
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//1er ciclo
+	nsleep(100);
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//2do ciclo
+	nsleep(100);
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//3er ciclo
+	nsleep(100);
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//4to ciclo
+	nsleep(100);
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//5to ciclo
+	nsleep(100);
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//6to ciclo
+	nsleep(100);
+	gpio_write(1,0);
+	nsleep(100);
+	gpio_write(1,1);//7to ciclo
+	nsleep(100);
+	gpio_write(1,0);
 
+//mosi
+	gpio_write(2,1);
+	nsleep(400);
 }
 	 uart_putchar('1');
 	 uart_putchar('2');

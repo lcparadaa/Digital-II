@@ -5,6 +5,7 @@ timer_t *timer0 = (timer_t *)  0x30000000;
 uart_t  *uart1  = (uart_t *)   0x40000000;
 spi_t   *spi0    = (spi_t *)    0x50000000;
 uart_t  *uart2  = (uart_t *)   0x60000000;
+gpio_t  *gpio = (gpio_t *)   0x70000000;
 
 isr_ptr_t isr_table[32];
 
@@ -16,6 +17,7 @@ void prueba()
 	   spi0->cs=3;
 	   spi0->divisor=4;
 	   uart0->rxtx=30;
+
            
 	  
 }	
@@ -107,7 +109,22 @@ void tic_init()
 
 	isr_register(1, &tic_isr);
 }
+/***************************************************************************
+ * GPIO Functions
+ */
 
+char gpio_read(char numPin){
+	char value = gpio -> gpio;
+	return value >>(numPin-1);
+}
+void gpio_write(char numPin, char value){
+	V_a = gpio -> gpio;
+	V_p = value<<(numPin-1);
+	if (V_p)
+	   gpio -> gpio = V_p | V_a;
+	else 
+	   V_p=  ~(1<< numPin - 1);
+}
 
 /***************************************************************************
  * UART Functions

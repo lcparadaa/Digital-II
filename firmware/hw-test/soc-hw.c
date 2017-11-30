@@ -118,6 +118,22 @@ void tic_init()
 
 	isr_register(1, &tic_isr);
 }
+/***************************************************************************
+ * GPIO Functions
+ */
+
+void gpio_read(char numPin){
+	char value = gio -> gpio;
+	return value >>(numPin-1);
+}
+void gpio_write(char numPin, char value){
+	V_a = gpio -> gpio;
+	V_p = value<<(numPin-1)
+	if (V_p)
+	   gpio -> gpio = V_p | V_a;
+	else 
+	   V_p=  ~(1<< numPin - 1)
+}
 
 
 /***************************************************************************

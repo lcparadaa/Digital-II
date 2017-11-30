@@ -73,14 +73,15 @@ void tic_init();
  * GPIO0
  */
 typedef struct {
-	volatile uint32_t ctrl;
-	volatile uint32_t dummy1;
-	volatile uint32_t dummy2;
-	volatile uint32_t dummy3;
-	volatile uint32_t in;
-	volatile uint32_t out;
-	volatile uint32_t oe;
+	volatile uint32_t gpio;
+	volatile uint32_t dir;
+	
 } gpio_t;
+void config_gpio(uint32_t dir){
+gpio -> dir =dir;
+}
+void gpio_read(char pin);
+void gpio_write(char pin, char value);
 
 /***************************************************************************
  * UART0
